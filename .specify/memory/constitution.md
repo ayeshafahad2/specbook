@@ -1,55 +1,61 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# Project Constitution: Physical AI & Humanoid Robotics Textbook
 
-## Core Principles
+## 1. Mission
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+Our primary mission is to create a comprehensive, AI-native textbook for the "Physical AI & Humanoid Robotics" course. This project is a cornerstone of Panaversity's initiative to build a portal for AI-driven technical education, empowering authors and learners alike. We aim to produce a cutting-edge educational resource that bridges the gap between digital AI and physical, embodied intelligence.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+## 2. Core Deliverables
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+The project is defined by two core deliverables that constitute the base functionality.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### 2.1. AI/Spec-Driven Book Creation
+- **Content:** An educational textbook on "Physical AI & Humanoid Robotics".
+- **Methodology:** The book will be written using a Spec-Driven Development (SDD) approach, facilitated by Spec-Kit Plus.
+- **Tooling:**
+    - **Framework:** Docusaurus
+    - **AI Assistant:** Claude Code
+    - **Process Management:** Spec-Kit Plus
+- **Deployment:** The final book will be deployed and accessible via GitHub Pages or Vercel.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### 2.2. Integrated RAG Chatbot
+- **Functionality:** A Retrieval-Augmented Generation (RAG) chatbot will be embedded within the book. The chatbot must be capable of:
+    - Answering user questions based on the book's entire content.
+    - Answering questions based on specific text selected by the user.
+- **Technology Stack:**
+    - **Backend:** FastAPI
+    - **Database:** Neon Serverless Postgres
+    - **Vector Store:** Qdrant Cloud (Free Tier)
+    - **AI/SDKs:** OpenAI Agents/ChatKit SDKs
 
-### [PRINCIPLE_6_NAME]
+## 3. Bonus Objectives
 
+To push the boundaries of AI-native education, participants can earn bonus points by implementing the following features:
 
-[PRINCIPLE__DESCRIPTION]
+- **Reusable Intelligence (50 Points):** Create and utilize reusable intelligence through Claude Code Subagents and Agent Skills.
+- **Authentication & Personalization (50 Points):** Implement user Signup and Sign-in using `better-auth.com`. During signup, collect user's software and hardware background to enable personalized content delivery.
+- **Dynamic Content Personalization (50 Points):** Allow logged-in users to personalize the content within chapters at the click of a button.
+- **Translation (50 Points):** Enable logged-in users to translate chapter content into Urdu with a button press.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## 4. Technical and Course Blueprint
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### 4.1. Course Structure
+The textbook will be structured around the following modules:
+- **Module 1: The Robotic Nervous System (ROS 2):** Middleware for robot control.
+- **Module 2: The Digital Twin (Gazebo & Unity):** Physics simulation and environment building.
+- **Module 3: The AI-Robot Brain (NVIDIA Isaac™):** Advanced perception and training.
+- **Module 4: Vision-Language-Action (VLA):** The convergence of LLMs and Robotics.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+### 4.2. Hardware & Architectural Considerations
+The content must be written with a deep understanding of the demanding hardware requirements for Physical AI. The textbook should provide clear guidance on setting up development environments, whether using:
+- **On-Premise Labs:** High-performance workstations with NVIDIA RTX GPUs and dedicated Edge AI kits (e.g., NVIDIA Jetson Orin).
+- **Cloud-Native Labs:** Utilizing cloud instances (e.g., AWS/Azure) for simulation and local "bridge" hardware for physical deployment.
+The architecture must address the "Latency Trap" by training models in the cloud and deploying them to local edge devices.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## 5. Project Management & Timeline
 
-## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
-
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+- **Process:** Adherence to Spec-Driven Development (SDD) is mandatory. All work will be tracked and documented using PHRs (Prompt History Records) and ADRs (Architectural Decision Records) as appropriate.
+- **Submission Deadline:** Sunday, November 30, 2025, at 06:00 PM.
+- **Deliverables for Submission:**
+    1. Public GitHub Repository Link.
+    2. Published Book Link (GitHub Pages or Vercel).
+    3. A demo video (under 90 seconds).
