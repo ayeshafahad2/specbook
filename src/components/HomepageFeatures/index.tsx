@@ -11,32 +11,29 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Master the Core of Robotics',
+    Svg: () => <img src="https://loremflickr.com/320/240/robot,purple" alt="A sophisticated robot" />,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Go beyond the basics and delve into the intricate mechanics of humanoid robots. Understand the principles of kinematics, dynamics, and control that underpin modern robotics and build a strong foundation for advanced applications.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Unlock the Power of AI',
+    Svg: () => <img src="https://loremflickr.com/320/240/ai,purple" alt="An AI brain" />,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Explore the cutting-edge AI that drives intelligent behavior in robots. This textbook covers everything from machine learning and computer vision to natural language processing and reinforcement learning, equipping you with the skills to create truly smart robots.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Create Real-World Solutions',
+    Svg: () => <img src="https://loremflickr.com/320/240/humanoid,purple" alt="A humanoid robot interacting with the world" />,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Put your knowledge into practice with hands-on projects and real-world case studies. Learn how to design, build, and program humanoid robots to solve complex problems and make a tangible impact on the world.
       </>
     ),
   },
@@ -44,13 +41,13 @@ const FeatureList: FeatureItem[] = [
 
 function Feature({title, Svg, description}: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col--4', styles.feature)}>
       <div className="text--center">
         <Svg className={styles.featureSvg} role="img" />
       </div>
       <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
+        <Heading as="h3" className={styles['feature-title']}>{title}</Heading>
+        <p className={styles['feature-description']}>{description}</p>
       </div>
     </div>
   );
