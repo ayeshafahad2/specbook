@@ -1,0 +1,36 @@
+name: Deploy Docusaurus to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # This branch will trigger the deployment
+  workflow_dispatch: # Allows manual triggering of the workflow
+
+jobs:
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Specify the Node.js version Docusaurus needs
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./
+
+      - name: Build Docusaurus website
+        run: npm run build
+        working-directory: ./
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build # Docusaurus builds to the 'build' directory by default
+          # This assumes your Docusaurus project is in the root of the repository.
+          # If it's in a subdirectory (e.g., 'a_docusaurus_site'), adjust 'publish_dir' and 'working-directory' above.
