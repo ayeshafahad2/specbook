@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout the repo
+      # 1️⃣ Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -28,7 +28,7 @@ jobs:
         working-directory: ./
 
       # 4️⃣ Build Docusaurus website
-      - name: Spec driven website
+      - name: Build Docusaurus website
         run: npm run build
         working-directory: ./
 
@@ -38,4 +38,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
-          publish_branch: gh-pages # Ensure it deploys to gh-pages branch
+          publish_branch: gh-pages
+          user_name: 'ayeshafahad2'
+          user_email: 'ayeshafahad661@gmail.com'
